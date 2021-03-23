@@ -12,7 +12,7 @@ Nous identifions principalement trois (03) fonctionnalités à savoir :
 - Nous avons adopté l'architecture MVC pour le développement et tout le long de nos travaux
 - Nous avons utilisé une base de données SQLite qui sert de tremplin pour le démarrage
 - Nous avons aussi utilisé la bibliothèque Room dans Android Studio pour l'interfaçage de la base de données
-- Nous nous sommes aussi servis des SharedPreferences et des Bundle pour de la persistence d'informations
+- Nous nous sommes aussi servis des SharedPreferences et des Extras pour de la persistence d'informations
 
 # Données disponibles
 Afin de procéder aux tests, nous avons créé dans la base de données, quelques profils déjà exploitables identifiés comme suit :

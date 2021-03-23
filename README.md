@@ -1,7 +1,7 @@
 # mgl7130-gain-jam
 # Introduction
 Ce projet est proposé par l'équipe Gain, qui est composée de Arol Gbeto-Fia et Larbi Ait Djebara.
-Nous avons choisi de travailler sur une aplication de gestion d'emplois.
+Nous avons choisi de travailler sur une aplication de gestion d'emplois (JobAroundMe ou JAM).
 Nous identifions principalement trois (03) fonctionnalités à savoir :
 - La gestion des profils utilisateurs (Création, Modification, Ouverture de session)
 - La consultation des emplois disponibles

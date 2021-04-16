@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/background"
     tools:context=".OffersListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -14,19 +14,11 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:minHeight="?attr/actionBarSize"
-            android:background="#64B285"
             android:layout_width="match_parent"
-            android:layout_height="64dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="liste des emplois"
-                android:textSize="15dp"
-                android:gravity="center"
-                
-                android:textStyle="bold"/>
-        </androidx.appcompat.widget.Toolbar>
+            android:layout_height="?attr/actionBarSize"
+            android:background="#64B285"
+            app:popupTheme="@style/Theme.JAM.PopupOverlay" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_offers_list" />

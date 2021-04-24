@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Using the database
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "dbjam.db")
-                //.createFromAsset("database/dbjam.db")
+                .createFromAsset("database/dbjam.db")
                 //.createFromAsset(getDatabasePath("dbjam.db").getAbsolutePath())
                 //.fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
@@ -212,7 +212,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     startActivity(offersListActivity);
                 }
             }
-        }, 2000);
+        }, 20);
 
     }
 

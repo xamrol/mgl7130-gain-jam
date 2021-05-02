@@ -49,6 +49,8 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
                 startActivity(p2);
                 break;
             case R.id.carte:
+                Intent c2 = new Intent(ProfileActivity.this, carteDesEmplois.class);
+                startActivity(c2);
                 break;
             case R.id.liste:
                 Intent h2 = new Intent(ProfileActivity.this, OffersListActivity.class);

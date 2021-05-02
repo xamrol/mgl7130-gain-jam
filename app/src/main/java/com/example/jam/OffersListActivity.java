@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,16 +47,7 @@ public class OffersListActivity extends AppCompatActivity implements NavigationV
         mDrawerLayout.addDrawerListener(toggle);
         //this method will take care of the rottating hamburger icon when you open the drawer
         toggle.syncState();
-        /*
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
+
     }
     //we override onBackPressed because when we press the back button
     //when our navigation drawer is opened we don't want to leave the activity immediately
@@ -79,7 +71,7 @@ public class OffersListActivity extends AppCompatActivity implements NavigationV
                 startActivity(p);
                 break;
             case R.id.carte:
-                Intent c = new Intent(OffersListActivity.this, CarteEmploisActivity.class);
+                Intent c = new Intent(OffersListActivity.this, carteDesEmplois.class);
                 startActivity(c);
                 break;
             case R.id.liste:

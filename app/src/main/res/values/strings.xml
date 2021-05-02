@@ -21,7 +21,7 @@
     <string name="reset_main_info">Saisissez votre pseudo</string>
     <string name="reset_main_btn">Vérifier</string>
     <string name="reset_main_input">Pseudo</string>
-    <string name="title_activity_offers_list">OffersListActivity</string>
+    <string name="title_activity_offers_list">Liste des offres</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -30,4 +30,10 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_profile">Profil</string>
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="navigation_drawer_close">close navigation drawer</string>
+    <string name="title_activity_carte_emplois">Map</string>
+    <string name="title_activity_job_details">Détails de l\'offre</string>
+    <string name="reply_offer_btn_tag">Postuler</string>
 </resources>

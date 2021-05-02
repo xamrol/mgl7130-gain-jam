@@ -1,0 +1,277 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "c3d201ce25361953e828c4495a11c6b8",
+    "entities": [
+      {
+        "tableName": "profiles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `desc` TEXT, `created_at` TEXT DEFAULT CURRENT_TIMESTAMP, `updated_at` TEXT DEFAULT CURRENT_TIMESTAMP)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "desc",
+            "columnName": "desc",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updated_at",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `firstname` TEXT, `lastname` TEXT, `pseudo` TEXT NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL, `type` INTEGER NOT NULL, `status` INTEGER NOT NULL DEFAULT 1, `created_at` TEXT DEFAULT CURRENT_TIMESTAMP, `updated_at` TEXT DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(`type`) REFERENCES `profiles`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstname",
+            "columnName": "firstname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastname",
+            "columnName": "lastname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pseudo",
+            "columnName": "pseudo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updated_at",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_users_type",
+            "unique": false,
+            "columnNames": [
+              "type"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_users_type` ON `${TABLE_NAME}` (`type`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "profiles",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "type"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "jobs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `employer` TEXT NOT NULL, `contact` TEXT NOT NULL, `category` TEXT NOT NULL, `status` INTEGER NOT NULL DEFAULT 1, `preferences` TEXT, `working_hours` TEXT, `requirement1` TEXT, `requirement2` TEXT, `requirement3` TEXT, `location1` TEXT, `location2` TEXT, `location3` TEXT, `location4` TEXT, `created_at` TEXT DEFAULT CURRENT_TIMESTAMP, `updated_at` TEXT DEFAULT CURRENT_TIMESTAMP)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "employer",
+            "columnName": "employer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contact",
+            "columnName": "contact",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "preferences",
+            "columnName": "preferences",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "working_hours",
+            "columnName": "working_hours",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "requirement1",
+            "columnName": "requirement1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "requirement2",
+            "columnName": "requirement2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "requirement3",
+            "columnName": "requirement3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "location1",
+            "columnName": "location1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "location2",
+            "columnName": "location2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "location3",
+            "columnName": "location3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "location4",
+            "columnName": "location4",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updated_at",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c3d201ce25361953e828c4495a11c6b8')"
+    ]
+  }
+}

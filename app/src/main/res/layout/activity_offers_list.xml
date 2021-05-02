@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".OffersListActivity">
+    android:background="@drawable/back"
+    tools:context=".controller.OffersListActivity"
+    android:id="@+id/drawLayout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="end">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.JAM.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#64B285"
-            app:popupTheme="@style/Theme.JAM.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.JAM.AppBarOverlay">
 
-    </com.google.android.material.appbar.AppBarLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#64B285"
+                app:popupTheme="@style/Theme.JAM.PopupOverlay"
+                android:elevation="4dp"/>
 
-    <include layout="@layout/content_offers_list" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <include layout="@layout/content_offers_list" />
+    </LinearLayout>
+  <com.google.android.material.navigation.NavigationView
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_gravity="start"
+      android:id="@+id/nav_view"
+      app:headerLayout="@layout/nav_header"
+      app:menu="@menu/menu_drawer"/>
+</androidx.drawerlayout.widget.DrawerLayout>

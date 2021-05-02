@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profil"
+            android:icon="@drawable/profile"
+            android:title="Mon Profil"
+
+            />
+        <item
+            android:id="@+id/carte"
+            android:icon="@drawable/map"
+            android:title="Carte d'emplois"
+        />
+
+        <item
+            android:id="@+id/liste"
+            android:icon="@drawable/job"
+            android:title="Offres d'emplois"
+            />
+    </group>
+</menu>

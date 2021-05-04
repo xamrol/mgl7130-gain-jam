@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.jam.model.AppDatabase;
 import com.example.jam.R;
+import com.example.jam.model.CurrentSessionDao;
 import com.example.jam.model.UserDao;
 
 import java.util.List;
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // Database and Dao instantiations
     public AppDatabase db;
     public UserDao userDao;
+    public CurrentSessionDao sessionDao;
 
     // Other useful variables
     private List<String> existingPseudos;
@@ -197,6 +199,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             SharedPreferences preferences = getPreferences(MODE_PRIVATE);
             preferences.edit().putString(PREFERENCES_KEY_USERNAME, mUsername.getText().toString()).apply();
             preferences.edit().putString(PREFERENCES_KEY_PASSWORD, mPassword.getText().toString()).apply();
+
+            sessionDao = db.CurrentSessionDao();
+            sessionDao.saveCurrentSessionPseudo(mUsername.getText().toString());
         }
 
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();

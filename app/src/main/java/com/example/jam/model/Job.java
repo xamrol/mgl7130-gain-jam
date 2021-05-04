@@ -93,6 +93,8 @@ public class Job {
         this.updatedAt = myJob.updatedAt;
     }
 
+    public int getJobId() { return this.id; }
+
     public String getJobTitle() {
         return this.title;
     }
@@ -116,6 +118,10 @@ public class Job {
     public String getJobRequirement2() { return this.requirement2; }
 
     public String getJobRequirement3() { return this.requirement3; }
+
+    public String getJobLatitude() { return this.location1; }
+
+    public String getJobLongitude() { return this.location2; }
 
     public int getJobStatus() { return this.status; }
 }

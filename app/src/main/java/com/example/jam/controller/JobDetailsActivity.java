@@ -150,8 +150,8 @@ public class JobDetailsActivity extends AppCompatActivity implements NavigationV
 
     @Override
     public void onClick(View v) {
-        //Toast.makeText(getApplicationContext(), "Succès", Toast.LENGTH_LONG).show();
-        sendEmail();
+        Toast.makeText(getApplicationContext(), "Succès", Toast.LENGTH_LONG).show();
+        //sendEmail();
     }
 
     @Override
@@ -173,6 +173,8 @@ public class JobDetailsActivity extends AppCompatActivity implements NavigationV
                 startActivity(p2);
                 break;
             case R.id.carte:
+                Intent c3 = new Intent(JobDetailsActivity.this, JobsMapActivity.class);
+                startActivity(c3);
                 break;
             case R.id.liste:
                 Intent h2 = new Intent(JobDetailsActivity.this, OffersListActivity.class);

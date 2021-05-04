@@ -93,4 +93,10 @@ public class User {
 
         this.updatedAt = finalDateTime;
     }
+
+    public int getUserId() { return this.id; }
+    public String getUserPseudo() { return this.pseudo; }
+    public String getUserFirstName() { return this.firstname; }
+    public String getUserLastName() { return this.lastname; }
+    public String getUserEmail() { return this.email; }
 }

@@ -107,7 +107,7 @@ public class OffersListActivity extends AppCompatActivity implements NavigationV
                 startActivity(p);
                 break;
             case R.id.carte:
-                Intent c = new Intent(OffersListActivity.this, CarteEmploisActivity.class);
+                Intent c = new Intent(OffersListActivity.this, JobsMapActivity.class);
                 startActivity(c);
                 break;
             case R.id.liste:

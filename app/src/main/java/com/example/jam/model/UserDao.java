@@ -44,6 +44,9 @@ public interface UserDao {
     @Query("SELECT password FROM users WHERE pseudo = :username")
     String getPasswordByPseudo(String username);
 
+    @Query("SELECT status FROM users WHERE pseudo = :username")
+    int getStatusByPseudo(String username);
+
     @Query("UPDATE users SET status = 0 WHERE pseudo = :userPseudo")
     void deactivateUserAccount(String userPseudo);
 
@@ -52,6 +55,12 @@ public interface UserDao {
 
     @Query("UPDATE users SET password = :newPassword WHERE pseudo = :userPseudo")
     void updateUserPassword(String newPassword, String userPseudo);
+
+    @Query("UPDATE users SET firstname = :newFirstName WHERE pseudo = :userPseudo")
+    void updateUserFirstName(String newFirstName, String userPseudo);
+
+    @Query("UPDATE users SET lastname = :newLastName WHERE pseudo = :userPseudo")
+    void updateUserLastName(String newLastName, String userPseudo);
 
     @Query("INSERT INTO users(firstname,lastname,pseudo,email,password,type) VALUES(:userFirstName,:userLastName,:userPseudo,:userEmail,:userPassword,:userType)")
     void createNewUser(String userFirstName, String userLastName, String userPseudo, String userEmail, String userPassword, int userType);

@@ -23,7 +23,7 @@ Afin de procéder aux tests, nous avons créé dans la base de données, quelque
 - User : test2 ; Password : test2
 
 # Procédure de vérification
-Remarque : Pour une première exécution du code, il faut s'assuer de décommenter la ligne numréo 72 (.createFromasset...) dans le fichier src/mainéjava/com/example/jam/LoginActivity.java pour que la création de la base de données Room se fasse. Ensuite, on peut la commenter à nouveau pour tous les autres essais.
+Remarque : Pour une première exécution du code, il faut s'assuer de décommenter la ligne numréo 72 (.createFromasset...) dans le fichier src/main/java/com/example/jam/LoginActivity.java pour que la création de la base de données Room se fasse. Ensuite, on peut la commenter à nouveau pour tous les autres essais.
 1. Exécuter le code
 2. Sur l'interface d'accueil, cliquer sur le bouton Inscription pour créer un nouveau profil ou sur le bouton Se connecter pour ouvrir une session
 3. Sur l'interface de connexion, nous avons prévu deux liens permettant d'accéder respectivement aux interfaces de réinitialisation de mot de passe et de création de nouveau profil. Les champs des formulaires sont soumis à des vérifications diverses.
